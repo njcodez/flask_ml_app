@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Heart Failure prediction</title>
+</head>
+<meta name="description" content = "A pre-trained ML Model to predict heart failures"/>
+<link rel="icon" type="image/x-icon" href="/icon.png">
+<style>
+    body{
+        text-align:center ;
+    }
+    h1 {
+    text-align: center;
+    font-style: italic;
+}
+input{
+    text-align: center;
+}
+button{
+    border-radius: 12px;
+    background-color: #ff1100;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 13%;
+    margin: auto;
+
+}
+button:hover{
+    background-color: #ffff;
+    color: #ff1100;
+    transition: 100ms;
+}
+
+form {
+  background-color: #010101;
+  display: flex;
+  width:100%;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100%;
+  text-align: center;
+}
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  width:10%;
+  font-family: inherit;
+  border-radius: 12px;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+p{
+    margin:5px;
+}
+label {
+        display: inline-block;
+        text-align: center;
+      }
+</style>
+<body style = background-color:#000000;  text='white';>
+<h1>
+<b>Heart Failure Prediction</b>
+</h1>
+<div style="background-color:white">
+<hr>
+<hr></div>
+<h2> Enter the details to check the probablity of heart failure!</h2>
+<h2>
+    <b>
+    {{ prediction_text }}
+    </b>
+    </h2>
+<h4> 
+<!--<img src="https://hibar-research.org/wp-content/uploads/2019/11/placeholder-300x200.jpeg" style="float: right; width: 50%; margin-left: 1%; margin-bottom: 0.5em;">
+
+--><form action="{{url_for('predict')}}" method="post" >
+    <label> Age  </label><input type='text' name='Age' placeholder='Enter age in years only' required='required' />
+    <label> Anaemia </label> <input type='text' name='Anaemia' placeholder='Enter 0 for no 1 for yes' required='required'/>
+    <label> Creatinine Phosphokinase level </label> <input type='text' name='Creatinine Phosphokinase' placeholder='mcg/L' required='required' />
+    <label> Diabetes </label> <input type='text' name='Diabetes' placeholder='Enter 0 for no 1 for yes' required='required'/>
+    <label> Ejection Fraction </label><input type='text' name='Ejection Fraction' placeholder='percentage' required='required'/>
+    <label> High Blood Pressure </label> <input type='text' name='High Blood Pressure' placeholder='Enter 0 for no 1 for yes' required='required' />
+    <label> Platelets </label> <input type='text' name='Platelets' placeholder='kiloplatelets/mL' required='required' />
+    <label> Serum creatinine </label> <input type='text' name='Serum creatinine' placeholder='mg/dL' required='required' />
+    <label> Serum Sodium </label> <input type='text' name='Serum Sodium' placeholder='mEq/L' required='required' />
+    <label> Sex </label> <input type='text' name='Sex' placeholder='Enter 0 for female 1 for male' required='required' />
+    <label> Smoking </label> <input type='text' name='Smoking' placeholder='Enter 0 for no 1 for yes' required='required' />
+    <label> Time </label> <input type='text' name='Time' placeholder ='Follow-up period (days)' required='required' />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+</h4>
+
+</body>
+</html>
